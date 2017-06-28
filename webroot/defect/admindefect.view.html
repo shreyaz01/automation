@@ -1,0 +1,76 @@
+<div ng-include="'login/header.view.html'"></div>
+
+<div class="page-content" sidebar-directive="state">
+    <div class="container-fluid">
+    	<div class="row no-margin" ng-controller="AdminDefectController">
+    		<div class="col-md-12 no-padding">
+	          <div class="panel panel-info">
+	            <div class="panel-heading">
+	              <h3 class="panel-title">Defects</h3>
+	            </div> <!--heading-->
+	            <div class="panel-body">
+
+				<!--=============================
+				=            Buttons            =
+				==============================-->
+				<div class="button-group">
+				<div class="dropdown" style="display: inline-block;">
+				  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" ng-disabled="!regionalReport">Export&nbsp;&nbsp;&nbsp;<span class="caret"></span></button>
+				  <ul class="dropdown-menu">
+				    <li ng-click="exportAction('csv','Regional Reports')"><a href=""><i class="fa fa-table"></i>&nbsp;&nbsp;&nbsp;CSV</a></li>
+				    <li ng-click="exportAction('excel','Regional Reports')"><a href=""><i class="fa fa-file-excel-o"></i>&nbsp;&nbsp;&nbsp;Excel</a></li>
+				    <li ng-click="exportAction('doc','Regional Reports')"><a href=""><i class="fa fa-file-word-o"></i>&nbsp;&nbsp;&nbsp;DOC</a></li>
+				    <li ng-click="exportAction('pdf','Regional Reports')"><a href=""><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;&nbsp;PDF</a></li>
+				    <li ng-click="exportAction('png','Regional Reports')"><a href=""><i class="fa fa-picture-o"></i>&nbsp;&nbsp;&nbsp;PNG</a></li>
+				  </ul>
+				</div>
+				<a ng-click="refreshPage()" class="btn btn-default btn-labeled btn-sm btn-refresh">
+				  <i class="fa fa-refresh"></i>&nbsp;&nbsp;Refresh
+				</a>
+				</div>
+				<!--====  End of Buttons  ====-->
+
+	              <!--===========================
+	              =            Table            =
+	              ============================-->
+	              <div class="table-responsive" style="overflow: scroll;">
+	              	<div class="container no-padding" style="width: 3000px;">
+	               <table ng-table="usersTable" show-filter="true" class="table table-bordered table-striped text-center table-responsive">
+	               <tbody>
+                        <tr ng-repeat="ins in data_technologies" >
+                          <td data-title="'Defect ID'" filter="{ 'defect_id': 'text' }">{{ins.defect_id}}</td>
+                          <td data-title="'Task Type'" filter="{ 'task_type': 'text' }">{{ins.task_type}}</td>
+                          <td data-title="'XTrac ID'" filter="{ 'xtrac_task_id': 'text' }">{{ins.xtrac_task_id}}</td>
+                          <td data-title="'Date'" filter="{ 'severity': 'text' }">{{ins.severity}}</td>
+                          <td data-title="'Severity'" filter="{ 'p1': 'text' }">{{ins.p1}}</td>
+                          <td data-title="'Business Priority'" filter="{ 'business_prioritization': 'text' }">{{ins.business_prioritization}}</td>
+                          <td data-title="'App'" filter="{ 'status': 'text' }">{{ins.status}}</td>
+                          <td data-title="'Description'" filter="{ 'assigned_to_app': 'text' }">{{ins.assigned_to_app}}</td>
+                          <td data-title="'Team'" filter="{ 'assigned_to_team': 'text' }">{{ins.assigned_to_team}}</td>
+                          <td data-title="'Subteam'" filter="{ 'assigned_to_subteam': 'text' }">{{ins.assigned_to_subteam}}</td>
+                          <td data-title="'Est Fix Date'" filter="{ 'estimated_fix_date': 'text' }">{{ins.estimated_fix_date}}</td>
+                          <td data-title="'Assigned to'" filter="{ 'assigned_to_emp1': 'text' }">{{ins.assigned_to_emp1}}</td>
+                          <td data-title="'Assigned to'" filter="{ 'assigned_to_emp2': 'text' }">{{ins.assigned_to_emp2}}</td>
+                          <td data-title="'Assigned to'" filter="{ 'assigned_to_emp3': 'text' }">{{ins.assigned_to_emp3}}</td>  
+                          <td data-title="'Lead Comment'" filter="{ 'comment_lead': 'text' }">{{ins.comment_lead}}</td>
+                          <td data-title="'User Comment'" filter="{ 'comment_user': 'text' }">{{ins.comment_user}}</td>
+                          <td data-title="'Assigned on'" filter="{ 'assignment_date': 'text' }">{{ins.assignment_date}}</td>
+                          <td data-title="'Is DNR'" filter="{ 'is_dnr': 'text' }">{{ins.is_dnr}}</td>
+                          <td data-title="'EST Fix Status'" filter="{ 'est_status': 'text' }">{{ins.est_status}}</td>
+                          <td data-title="'Last updt by lead'" filter="{ 'updt_by_lead': 'text' }">{{ins.updt_by_lead}}</td>
+                          <td data-title="'Timestamp'" filter="{ 'updt_timestamp_lead': 'text' }">{{ins.updt_timestamp_lead}}</td>
+                          <td data-title="'Last updt by user'" filter="{ 'updt_by_user': 'text' }">{{ins.updt_by_user}}</td>
+                          <td data-title="'Timestamp'" filter="{ 'updt_timestamp_user': 'text' }">{{ins.updt_timestamp_user}}</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                </div>
+                </div>
+	         </div>
+	       </div>
+	     </div>
+	   </div>
+	</div>
+</div>
+

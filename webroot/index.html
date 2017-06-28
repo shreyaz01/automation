@@ -1,0 +1,96 @@
+<style type="text/css">
+        .modal-backdrop.in {
+            display: none !important;
+        }
+        body {
+            padding-right: 0 !important;
+        }
+    </style>
+
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8" />
+<title>UAT Assignment Tool Login</title>
+ 
+ <!-- reference sheets -->
+<!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="angular/angular-ui-notification.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-xeditable/0.6.0/css/xeditable.min.css"/>
+<link rel="stylesheet" type="text/css" href="angular/css/all.css"/>
+<link rel="stylesheet" type="text/css" href="angular/css/style.css"/>
+
+<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://code.angularjs.org/1.2.20/angular.js"></script>
+<script src="https://code.angularjs.org/1.2.20/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.2.13/angular-cookies.js"></script>
+<script src="angular/spin.js"></script>
+<script src="angular/angular-spinner.js"></script>
+<script src="angular/angular-ui-notification.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-xeditable/0.6.0/js/xeditable.min.js"></script>
+ <script src="angular/angular-material.min.js"></script>
+ <script src="angular/ng-table/ng-table.min.js"></script>
+</head>
+
+<body>
+
+	<!-- this div is used to display the success and failure alert messages to the user -->
+	<!-- <div class="jumbotron">
+		<div class="container">
+				<center>
+					<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }"
+						ng-if="flash" ng-bind="flash.message">
+					</div>
+				</center>
+ -->
+	<!--  this div is used to display all the pages. Each Controller generated view under ng-view -->
+				<!-- <div ng-view>
+
+				</div>
+		</div>
+	</div> -->
+ 
+ <!--=============================
+    =            Spinner            =
+    ==============================-->
+    <!-- <span style="position: fixed;
+    background: rgba(0,0,0,0.6);top: 0;left: 0;right: 0;bottom: 0;z-index: 1200;" us-spinner="{radius:14, width:8, length: 10}">
+    </span> -->
+    <!--====  End of Spinner  ====-->
+
+    <!--=============================
+    =            Ng View            =
+    ==============================-->
+    <div class="page zipper" style="position: absolute;top: 0;left: 0;right: 0;height: 100%;" ng-view></div>
+    <!--====  End of Ng View  ====-->
+
+    <!--============================
+    =            Footer            =
+    =============================-->
+    <footer>
+        <p>Copyright 2017 Amdocs.</p>
+    </footer>
+    <!--====  End of Footer  ====-->
+
+ <!-- angular controllers -->
+	<script src="app.js"></script>
+	<script src="authentication.service.js"></script>
+	<script src="flash.service.js"></script>
+	<script src="user.service.js"></script>
+	<script src="login/login.controller.js"></script>
+	<script src="adminhome/adminhome.controller.js"></script>
+	<script src="userhome/userhome.controller.js"></script>
+	<script src="defect/admindefect.controller.js"></script>
+	<script src="defect/userdefect.controller.js"></script>
+	<script src="people/people.controller.js"></script>
+	<script src="env/adminenv.controller.js"></script>
+	<script src="env/userenv.controller.js"></script>
+	<script src="registration/registration.controller.js"></script> 
+	
+
+</body>
+
+</html>

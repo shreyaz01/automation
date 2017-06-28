@@ -1,0 +1,81 @@
+<style type="text/css">
+    /*#side-menu {
+        height: 1000px;
+    }*/
+    .dropdown-menu1 {
+        position: static !important;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: none;
+        min-width: 100%;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        text-align: left;
+        list-style: none;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+    }
+</style>
+<!-- <script>
+ angular.module('app')
+.controller('headercontroller', function($scope){
+    $scope.state = false;
+    $scope.toggleState = function() {
+      //console.log("toggleState");
+        $scope.state = !$scope.state;
+    }
+}); 
+</script> -->
+<!--================================
+=            Top Header            =
+=================================-->
+<div class="header-wrapper" >
+    <div class="container-fluid prpl15">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="logo-container">
+                    <h2 style="margin-left: 30px; font-size: 40px;">Amdocs</h2>
+                    <!-- <img src="assets/images/logo.png" class="logoimg"> -->
+                    <!-- <i class="fa fa-bars menu-bar" ng-click="toggleState()"></i> -->
+                    <button ng-click="vm.logout()" style="margin:5px; margin-top:10px; margin-left: 1000px; float: right;">
+                        <i class="fa fa-power-off" aria-hidden="true" style="font-size:23px; color: black"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--====  End of Top Header  ====-->
+
+<!--=============================
+=            Sidebar            =
+==============================-->
+<div class="navbar-default sidebar" role="navigation" visible="visible" sidebar-directive="state" alignment="left">
+    <div class="sidebar-nav navbar-collapse" ng-scrollbars>
+        <ul class="nav in" id="side-menu">
+
+            <!-- dashboard -->
+            <li style="margin-top: 20px;">
+                <a href="#/dashboard" class="list-group-item" data-toggle="collapse" class="sidebar-link"><i class="fa fa-tachometer"></i>&nbsp;&nbsp;Dashboard</a>
+            </li>
+            <li>
+                <a href="#/environment" class="list-group-item" data-toggle="collapse" class="sidebar-link"><i class="fa fa-globe"></i>&nbsp;&nbsp;Environment</a>
+            </li>
+            <li>
+                <a href="#/people" class="list-group-item" data-toggle="collapse" class="sidebar-link"><i class="fa fa-users"></i>&nbsp;&nbsp;People</a>
+            </li>
+            <li>
+                <a href="#/admindefect" class="list-group-item" data-toggle="collapse" class="sidebar-link"><i class="fa fa-bug"></i>&nbsp;&nbsp;Defect</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>
+<!--====  End of Sidebar  ====-->
